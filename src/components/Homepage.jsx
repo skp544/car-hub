@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CarCard, CustomFilter, Hero, Searchbar, ShowMore } from "./";
-import { yearsOfProduction } from "../constants";
+import { fuels, yearsOfProduction } from "../constants";
 import { fetchCars } from "../utils";
 
 const Homepage = () => {
@@ -55,7 +55,7 @@ const Homepage = () => {
           <Searchbar setManufacturer={setManufacturer} setModel={setModel} />
 
           <div className="home__filter-container">
-            <CustomFilter title="fuel" options={fuel} setFilter={setFuel} />
+            <CustomFilter title="fuel" options={fuels} setFilter={setFuel} />
             <CustomFilter
               title="year"
               options={yearsOfProduction}
@@ -64,7 +64,7 @@ const Homepage = () => {
           </div>
         </div>
 
-        {allCars.length > 0 ? (
+        {allCars?.length > 0 ? (
           <section>
             <div className="home__cars-wrapper">
               {allCars?.map((car, i) => (
