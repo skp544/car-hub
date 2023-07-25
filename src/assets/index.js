@@ -1,3 +1,4 @@
 import Logo from "./logo.svg";
+import HeroImg from "./hero.png";
 
-export { Logo };
+export { Logo, HeroImg };
